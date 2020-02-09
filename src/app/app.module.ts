@@ -4,9 +4,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule, AppComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SharedComponents } from './shared/shared.module';
 
 @NgModule({
-	declarations: [AppComponent, ...AppComponents],
+	declarations: [AppComponent, ...AppComponents, ...SharedComponents],
 	imports: [BrowserModule, AppRoutingModule, NgbModule],
 	providers: [],
 	bootstrap: [AppComponent],
