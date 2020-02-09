@@ -5,8 +5,15 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="apiUrl">API Url</label>
-                        <input type="email" class="form-control" id="apiUrl" name="apiUrl" placeholder="API Url"
-                            [(ngModel)]="component.formInputs.apiUrl.value">
+                        <div class="input-group">
+
+                            <input type="email" class="form-control" id="apiUrl" name="apiUrl" placeholder="API Url"
+                                [(ngModel)]="component.formInputs.apiUrl.value"
+                                [disabled]="component.formInputs.apiUrl.disabled" (change)="changeFormInputApiUrl()">
+                            <div class="input-group-prepend" (click)="clickEditFormInputApiUrl()">
+                                <div class="input-group-text">@</div>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPassword4">Page Name</label>

@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
 	selector: 'app-home',
 	templateUrl: './home.component.html',
 	styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 	component = {
 		form: null,
 		formInputs: {
@@ -23,5 +23,25 @@ export class HomeComponent {
 		},
 	};
 
-	
+	ngOnInit() {
+		this.defineAllDefaultValues();
+	}
+
+	defineAllDefaultValues(): void {
+		let { formInputs } = this.component;
+		const formInputsKeys = Object.keys(formInputs);
+		for (let index in formInputsKeys) {
+			const { defaultValue } = formInputs[formInputsKeys[index]];
+			this.component.formInputs[formInputsKeys[index]].value = defaultValue;
+		}
+	}
+
+	changeFormInputApiUrl() {
+		const { apiUrl } = this.component.formInputs;
+	}
+
+	clickEditFormInputApiUrl() {
+		const { apiUrl } = this.component.formInputs;
+		console.log(apiUrl)
+	}
 }
