@@ -6,12 +6,11 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class BaseComponent {
 	constructor(private spinner: NgxSpinnerService) {}
 
-	defineAllDefaultValues(): void {
-		let { formInputs } = this.component;
+	public defineAllDefaultValues(formInputs: any, objectName = 'component', indexName = 'formInputs'): void {
 		const formInputsKeys = Object.keys(formInputs);
 		for (let index in formInputsKeys) {
 			const { defaultValue } = formInputs[formInputsKeys[index]];
-			this.component.formInputs[formInputsKeys[index]].value = defaultValue;
+			this[objectName][indexName][formInputsKeys[index]].value = defaultValue;
 		}
 	}
 }
