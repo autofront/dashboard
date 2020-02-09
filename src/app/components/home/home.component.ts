@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BaseComponent } from '../base.component';
 
 @Component({
 	selector: 'app-home',
@@ -25,15 +26,6 @@ export class HomeComponent implements OnInit {
 
 	ngOnInit() {
 		this.defineAllDefaultValues();
-	}
-
-	defineAllDefaultValues(): void {
-		let { formInputs } = this.component;
-		const formInputsKeys = Object.keys(formInputs);
-		for (let index in formInputsKeys) {
-			const { defaultValue } = formInputs[formInputsKeys[index]];
-			this.component.formInputs[formInputsKeys[index]].value = defaultValue;
-		}
 	}
 
 	changeFormInputApiUrl() {
