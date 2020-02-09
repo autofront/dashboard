@@ -9,9 +9,11 @@
 
                             <input type="email" class="form-control" id="apiUrl" name="apiUrl" placeholder="API Url"
                                 [(ngModel)]="component.formInputs.apiUrl.value"
-                                [disabled]="component.formInputs.apiUrl.disabled" (change)="changeFormInputApiUrl()">
+                                [disabled]="checkFormInputsApiUrlDisabled()" (change)="changeFormInputApiUrl()">
                             <div class="input-group-prepend" (click)="clickEditFormInputApiUrl()">
-                                <div class="input-group-text">@</div>
+                                <div class="input-group-text"><i class="fas"
+                                        [ngClass]="{'fa-edit': checkFormInputsApiUrlDisabled(), 'fa-save': !checkFormInputsApiUrlDisabled() }"></i>
+                                </div>
                             </div>
                         </div>
                     </div>

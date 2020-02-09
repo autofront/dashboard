@@ -40,8 +40,12 @@ export class HomeComponent implements OnInit {
 		const { apiUrl } = this.component.formInputs;
 	}
 
-	clickEditFormInputApiUrl() {
-		const { apiUrl } = this.component.formInputs;
-		console.log(apiUrl)
+	clickEditFormInputApiUrl(): void {
+		const { disabled } = this.component.formInputs.apiUrl;
+		this.component.formInputs.apiUrl.disabled = !disabled;
+	}
+
+	checkFormInputsApiUrlDisabled() {
+		return this.component.formInputs.apiUrl.disabled;
 	}
 }
