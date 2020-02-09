@@ -6,7 +6,7 @@ import { BaseComponent } from '../base.component';
 	templateUrl: './home.component.html',
 	styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent extends BaseComponent implements OnInit {
 	component = {
 		form: null,
 		formInputs: {
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
 	};
 
 	ngOnInit() {
-		this.defineAllDefaultValues();
+		this.defineAllDefaultValues(this.component.formInputs);
 	}
 
 	changeFormInputApiUrl() {
