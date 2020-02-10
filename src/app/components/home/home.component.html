@@ -18,8 +18,10 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="pageName">Page name</label>
-                        <select id="pageName" name="pageName" [(ngModel)]="component.formInputs.pageName.value" class="form-control">
-                            <option *ngFor="let option of component.formInputs.pageName.options" [value]="option.id" selected>
+                        <select id="pageName" name="pageName" [(ngModel)]="component.formInputs.pageName.value"
+                            class="form-control">
+                            <option *ngFor="let option of component.formInputs.pageName.options" [value]="option.name"
+                                selected>
                                 {{option.name}}
                             </option>
                         </select>
@@ -30,6 +32,11 @@
 
 
         </div>
-        <div class="{{component.render.class.largeMdSm}}">.col-6</div>
+        <div class="{{component.render.class.largeMdSm}}">
+            <json-editor #editor [options]="options" [data]="component.formInputs.data.value"></json-editor>
+            <button type="button" class="btn btn-primary mt-5"
+                [disabled]="jsonIsInvalid()" (click)="submit()">Send</button>
+
+        </div>
     </div>
 </div>

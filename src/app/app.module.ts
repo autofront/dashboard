@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { HttpClientModule } from '@angular/common/http';
+import { NgJsonEditorModule } from 'ang-jsoneditor';
 
 import { AppRoutingModule, AppComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,8 +21,9 @@ import { SharedComponents } from './shared/shared.module';
 		NgxSpinnerModule,
 		HttpClientModule,
 		BrowserAnimationsModule,
+		NgJsonEditorModule
 	],
 	providers: [],
 	bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
