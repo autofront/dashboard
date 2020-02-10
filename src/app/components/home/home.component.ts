@@ -132,4 +132,10 @@ export class HomeComponent extends BaseComponent implements OnInit {
 			await this.mutatePage(dataSend);
 		}
 	}
+
+	reset() {
+		const { defaultValue } = this.component.formInputs.data;
+		this.component.formInputs.data.value = {};
+		this.component.formInputs.data.value = defaultValue;
+	}
 }

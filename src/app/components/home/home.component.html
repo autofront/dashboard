@@ -32,11 +32,12 @@
 
 
         </div>
-        <div class="{{component.render.class.largeMdSm}}">
+        <div class="{{component.render.class.largeMdSm}} text-center">
             <json-editor #editor [options]="options" [data]="component.formInputs.data.value"></json-editor>
-            <button type="button" class="btn btn-primary mt-5"
-                [disabled]="jsonIsInvalid()" (click)="submit()">Send</button>
-
+            <button type="button" class="btn btn-danger m-3" [disabled]="!jsonIsInvalid()"
+                (click)="reset()">Reset</button>
+            <button type="button" class="btn btn-primary m-3" [disabled]="jsonIsInvalid()"
+                (click)="submit()">Send</button>
         </div>
     </div>
 </div>
