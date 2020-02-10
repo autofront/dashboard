@@ -48,7 +48,7 @@ export class HomeComponent extends BaseComponent implements OnInit {
 				this.onCaughtError(false);
 
 			}
-	  };
+		};
 
 		this.defineAllDefaultValues(this.component.formInputs);
 		await this.getPages();
@@ -56,7 +56,7 @@ export class HomeComponent extends BaseComponent implements OnInit {
 	}
 
 	onCaughtError(valid) {
-		if(!valid) {
+		if (!valid) {
 			this.component.formInputs.data.valid = false;
 		} else {
 			this.component.formInputs.data.valid = true;
@@ -114,14 +114,22 @@ export class HomeComponent extends BaseComponent implements OnInit {
 		}
 	}
 
-	async mutatePage() {
-		const ts = await this.request.request('https://protected-ridge-35353.herokuapp.com/');
+	async mutatePage(data) {
+		const url = this.makeUrl('pages')
+		const response = await this.request.request(url, 'POST', data);
+		if (!response.error) {
+			await this.getPage();
+		}
 	}
 
-	submit() {
+	async submit() {
 		const jsonIsInvalid = this.jsonIsInvalid();
-		if(!jsonIsInvalid) {
-			console.log(this.component.formInputs.data.value );
+		if (!jsonIsInvalid) {
+			const dataSend = {
+				name: this.component.formInputs.pageName.value,
+				data: this.component.formInputs.data.value
+			}
+			await this.mutatePage(dataSend);
 		}
 	}
 }
