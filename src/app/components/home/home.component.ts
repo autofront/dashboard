@@ -119,6 +119,9 @@ export class HomeComponent extends BaseComponent implements OnInit {
 	}
 
 	submit() {
-		console.log(this.component.formInputs.data.value );
+		const jsonIsInvalid = this.jsonIsInvalid();
+		if(!jsonIsInvalid) {
+			console.log(this.component.formInputs.data.value );
+		}
 	}
 }
