@@ -60,7 +60,6 @@ export class HomeComponent extends BaseComponent implements OnInit {
 			this.component.formInputs.data.valid = false;
 		} else {
 			this.component.formInputs.data.valid = true;
-			this.component.formInputs.data.value = valid;
 		}
 	}
 
@@ -127,7 +126,7 @@ export class HomeComponent extends BaseComponent implements OnInit {
 		if (!jsonIsInvalid) {
 			const dataSend = {
 				name: this.component.formInputs.pageName.value,
-				data: this.component.formInputs.data.value
+				data: this.editor.get()
 			}
 			await this.mutatePage(dataSend);
 		}
