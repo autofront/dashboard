@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "deploy": "ng build --prod  --base-href 'https://autockage.github.io/dashboard/' && npm run upload",
-    "upload": "npx ngh --repo=https://github.com/autockage/flutter.git --name=velrino --email=denismagalhaesvelrino@gmail.com  --branch=gh-pages --dir=dist/"
+    "upload": "npx ngh --repo=https://github.com/autockage/dashboard.git --name=velrino --email=denismagalhaesvelrino@gmail.com  --branch=gh-pages --dir=dist/"
   },
   "private": true,
   "dependencies": {
