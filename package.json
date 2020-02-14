@@ -1,5 +1,5 @@
 {
-  "name": "autofront",
+  "name": "maestrya",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "deploy": "ng build --prod && npm run upload",
-    "upload": "npx ngh --repo=git@github.com:autockage/autockage.github.io.git --name=velrino --email=denismagalhaesvelrino@gmail.com  --branch=master --dir=dist/"
+    "upload": "npx ngh --repo=git@github.com:maestrya/maestrya.github.io.git --name=velrino --email=denismagalhaesvelrino@gmail.com  --branch=master --dir=dist/"
   },
   "private": true,
   "dependencies": {
