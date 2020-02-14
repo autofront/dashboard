@@ -1,4 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~bootstrap/dist/css/bootstrap.min.css';
-@import '@fortawesome/fontawesome-free/css/all.css';
-@import '~jsoneditor/dist/jsoneditor.min.css';
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "@fortawesome/fontawesome-free/css/all.css";
+@import "~animate.css/animate.min.css";
+@import "~jsoneditor/dist/jsoneditor.min.css";
+@import "./argon.scss";
+
+body {
+  background-color: #212529 !important;
+}
+
+.bg-gradisent {
+  background-color: #9e00ff !important;
+  background-image: linear-gradient(225deg, #9e00ff 0%, #784ba0 50%, #c700f7 100%);
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.footer-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+}
+
+html {
+  position: relative;
+  min-height: 100vh;
+}
