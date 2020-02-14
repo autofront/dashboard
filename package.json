@@ -8,8 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build --prod  --base-href 'https://autockage.github.io/dashboard/' && npm run upload",
-    "upload": "npx ngh --repo=https://github.com/autockage/dashboard.git --name=velrino --email=denismagalhaesvelrino@gmail.com  --branch=gh-pages --dir=dist/"
+    "deploy": "ng build --prod && npm run upload",
+    "upload": "npx ngh --repo=git@github.com:autockage/autockage.github.io.git --name=velrino --email=denismagalhaesvelrino@gmail.com  --branch=master --dir=dist/"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +24,7 @@
     "@fortawesome/fontawesome-free": "^5.12.1",
     "@ng-bootstrap/ng-bootstrap": "^5.2.1",
     "ang-jsoneditor": "^1.9.1",
+    "animate.css": "^3.7.2",
     "bootstrap": "^4.4.1",
     "jsoneditor": "^8.5.3",
     "ngx-spinner": "^8.1.0",
