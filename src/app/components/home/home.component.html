@@ -1,43 +1,70 @@
-<div class="container-fluid mt-5">
-    <div class="row">
-        <div class="{{component.render.class.largeMdSm}}">
-            <form>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="apiUrl">API Url</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="apiUrl" name="apiUrl" placeholder="API Url"
-                                [(ngModel)]="component.formInputs.apiUrl.value"
-                                [disabled]="checkFormInputsApiUrlDisabled()" (change)="changeFormInputApiUrl()">
-                            <div class="input-group-prepend" (click)="clickEditFormInputApiUrl()">
-                                <div class="input-group-text"><i class="fas"
-                                        [ngClass]="{'fa-edit': checkFormInputsApiUrlDisabled(), 'fa-save': !checkFormInputsApiUrlDisabled() }"></i>
-                                </div>
+<section class="section pb-0 bg-dark pt-5 pb-5 mt-5">
+    <div class="container pt-lg pb-100">
+        <div class="row row-grid align-items-center justify-content-center">
+            <div class="col-12 text-center">
+                <img src="./assets/imgs/white.png" height="250">
+                <h4 class="display-2 text-white">AutoCkage</h4>
+                <h5 class="display-4 text-white font-italic">"Don't work hard. Work smart!"</h5>
+            </div>
+            <div class="col-12 text-center">
+                <div class="row">
+
+                    <div class="col-lg-4 mt-2">
+                        <div class="card border-0 animated zoomIn h-100 w-100 d-inline-block">
+                            <div class="card-body px-lg-5 py-lg-5">
+                                <h5 class="title text-primary">InnaperGenerator</h5>
+                                <p class="mt-2">
+                                    Location for generate yout HTML innaper
+                                </p>
+                            </div>
+                            <div class="card-body">
+                                <a href="https://autockage.github.io/inappgenerator/" target="_blank"
+                                    class="btn btn-success mt-4 btn-block">Let's go!</a>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group col-md-6">
-                        <label for="pageName">Page name</label>
-                        <select id="pageName" name="pageName" [(ngModel)]="component.formInputs.pageName.value"
-                            class="form-control">
-                            <option *ngFor="let option of component.formInputs.pageName.options" [value]="option.name"
-                                selected>
-                                {{option.name}}
-                            </option>
-                        </select>
 
+                    <div class="col-lg-4 mt-2">
+                        <div class="card border-0 animated zoomIn h-100  w-100 d-inline-block">
+                            <div class="card-body px-lg-5 py-lg-5">
+                                <h5 class="title text-primary">Dashboard</h5>
+                                <p class="mt-2">
+                                    Location for server-side pages structures that render your front
+                                </p>
+                            </div>
+                            <div class="card-body">
+                                <a class="btn btn-success mt-4 btn-block" routerLink="/dashboard">Let's go!</a>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-lg-6 order-lg-2">
+                <div class="card shadow shadow-lg--hover mt-5 animated zoomIn"
+                    *ngFor="let item of component.data.learnPlanningData">
+                    <div class="card-body">
+                        <div class="d-flex px-3">
+                            <div>
+                                <div class="icon icon-shape bg-primary rounded-circle text-white">
+                                    <i [class]="item.icon"></i>
+                                </div>
+                            </div>
+                            <div class="pl-4">
+                                <h5 class="title text-primary">{{item.title}}</h5>
+                                <p>{{item.text}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </form>
-
-
-        </div>
-        <div class="{{component.render.class.largeMdSm}} text-center">
-            <json-editor #editor [options]="options" [data]="component.formInputs.data.value"></json-editor>
-            <button type="button" class="btn btn-danger m-3" [disabled]="!jsonIsInvalid()"
-                (click)="reset()">Reset</button>
-            <button type="button" class="btn btn-primary m-3" [disabled]="jsonIsInvalid()"
-                (click)="submit()">Send</button>
+            </div>
+            <div class="col-md-6 order-lg-2 ml-lg-auto">
+                <div class="position-relative pl-md-5">
+                    <img src="./assets/imgs/auto.svg" class="img-center img-fluid animated pulse infinite">
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>
