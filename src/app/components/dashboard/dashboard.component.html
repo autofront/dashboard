@@ -1,6 +1,6 @@
 <div class="container-fluid mt-5">
     <div class="row">
-        <div class="{{component.render.class.largeMdSm}}">
+        <div class="{{component.render.class.largeMdSm}} animated bounceInLeft">
             <form>
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -32,7 +32,7 @@
 
 
         </div>
-        <div class="{{component.render.class.largeMdSm}} text-center">
+        <div class="{{component.render.class.largeMdSm}} text-center animated bounceInRight">
             <json-editor #editor [options]="options" [data]="component.formInputs.data.value"></json-editor>
             <button type="button" class="btn btn-danger m-3" [disabled]="!jsonIsInvalid()"
                 (click)="reset()">Reset</button>
